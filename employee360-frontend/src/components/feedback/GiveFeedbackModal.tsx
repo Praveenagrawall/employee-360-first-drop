@@ -262,7 +262,7 @@ export default function GiveFeedbackModal({ isOpen, onClose, fromEmployeeId, tar
                     </button>
                     <button
                         type="submit"
-                        disabled={rating === 0 || content.trim().length < 20 || isPending}
+                        disabled={rating === 0 || isPending}
                         className="bg-[#00338D] text-white px-5 py-2 rounded text-sm font-medium hover:bg-[#004BB4] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
                     >
                         {isPending && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
