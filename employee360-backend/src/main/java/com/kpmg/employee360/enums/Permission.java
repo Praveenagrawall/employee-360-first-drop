@@ -1,0 +1,27 @@
+package com.kpmg.employee360.enums;
+
+/**
+ * Defines all available granular permissions for the Employee 360 system.
+ */
+public enum Permission {
+    VIEW_OWN_PROFILE,
+    VIEW_ANY_PROFILE,
+    VIEW_LIMITED_PROFILE,
+    VIEW_OWN_PERFORMANCE,
+    VIEW_TEAM_PERFORMANCE,
+    VIEW_ANY_PERFORMANCE,
+    WRITE_PERFORMANCE_REVIEW,
+    GIVE_DOWNWARD_FEEDBACK,
+    GIVE_PEER_FEEDBACK,
+    CREATE_PROJECT,
+    ASSIGN_TEAM_MEMBERS,
+    VIEW_OWN_PROJECTS,
+    VIEW_TEAM_PROJECTS,
+    VIEW_ALL_PROJECTS,
+    VIEW_ORG_ANALYTICS,
+    ADMIN_PANEL,
+    EXPORT_TEAM_REPORT,
+    EXPORT_ANY_REPORT,
+    SEARCH_FULL,
+    SEARCH_BASIC
+}

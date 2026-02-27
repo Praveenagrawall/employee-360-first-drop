@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-page-bg text-text-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    @apply border-[#E5E8EB];
+  }
+}
+
+/* Scrollbar styling for the corporate look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F6F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4CDD5;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8E99A4;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-kpmg-blue text-white px-5 py-2 rounded font-medium hover:bg-kpmg-blue-hover active:bg-kpmg-blue-dark transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-100 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-[#C4CDD5] text-text-primary px-5 py-2 rounded font-medium hover:bg-page-bg active:bg-[#E5E8EB] transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-gray-100 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-[#D4311E] text-white px-5 py-2 rounded font-medium hover:bg-[#B82818] active:bg-[#9E2015] transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-red-100 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-white rounded border border-[#E5E8EB] p-5 shadow-sm;
+  }
+
+  .input-base {
+    @apply border border-[#C4CDD5] rounded h-[38px] px-3 text-sm focus:border-kpmg-blue focus:ring-2 focus:ring-blue-100 outline-none transition-all;
+  }
+
+  .label-base {
+    @apply text-[13px] font-medium text-text-secondary mb-1 block;
+  }
+}
+
+@layer utilities {
+  .header-gradient {
+    background: linear-gradient(135deg, #00338D 0%, #0056B3 50%, #0077CC 100%);
+  }
+
+  .table-header-cell {
+    @apply bg-table-header-bg text-kpmg-blue font-semibold text-[13px] uppercase tracking-wide px-4 py-3 border-b-2 border-[#B8D4E8];
+  }
+}
