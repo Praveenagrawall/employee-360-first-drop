@@ -46,7 +46,8 @@ export function IndividualDashboard({ data }: IndividualDashboardProps) {
         return 'warning';
     };
 
-    const { employeeId } = useUserContext();
+    const { currentUser } = useUserContext();
+    const employeeId = currentUser?.employeeId;
     const { data: requestRes } = useQuery({
         queryKey: ['employeeRequests', employeeId],
         queryFn: async () => {

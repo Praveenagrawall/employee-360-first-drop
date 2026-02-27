@@ -27,7 +27,7 @@ import {
 } from '../components/common';
 
 import { cn } from '../utils';
-import type { Employee } from '../types';
+
 
 const DEPARTMENTS = ['Digital Lighthouse', 'Tax & Advisory', 'Risk Advisory', 'Management Consulting'];
 const DESIGNATIONS = [

@@ -468,7 +468,7 @@ export default function EmployeeProfilePage() {
                         ...employee,
                         id: employee.id,
                         fullName: `${employee.firstName} ${employee.lastName}`,
-                        designation: employee.designation,
+                        designation: (employee as any).designation || (employee as any).designationName,
                         department: employee.department,
                         profilePicUrl: employee.profilePicUrl,
                         totalAllocation: employee.totalAllocationPercentage,
