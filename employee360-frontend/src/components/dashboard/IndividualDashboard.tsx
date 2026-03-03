@@ -172,24 +172,26 @@ export function IndividualDashboard({ data }: IndividualDashboardProps) {
                         <EmptyState title="No Teammates" description="Join a project to see your team." className="flex-1" />
                     ) : (
                         <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
-                            {data.myTeammates.map((teammate) => (
-                                <Link
-                                    to={`/ employees / ${teammate.id} `}
-                                    key={teammate.id}
-                                    className="flex items-center p-4 rounded-2xl border border-gray-50 bg-gray-50/30 hover:bg-white hover:shadow-md hover:border-[#00338D]/10 transition-all group"
-                                >
-                                    <Avatar name={teammate.fullName} size="sm" className="mr-4 ring-2 ring-white shadow-sm" />
-                                    <div className="flex-1 overflow-hidden">
-                                        <p className="text-sm font-bold text-text-primary truncate group-hover:text-[#00338D] transition-colors">
-                                            {teammate.fullName}
-                                        </p>
-                                        <p className="text-[10px] text-text-secondary truncate mt-0.5">{teammate.designationName}</p>
-                                    </div>
-                                    <div className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <ChevronRight className="w-4 h-4 text-[#00338D]" />
-                                    </div>
-                                </Link>
-                            ))}
+                            {data.myTeammates
+                                .filter(teammate => teammate.id !== currentUser?.employeeId)
+                                .map((teammate) => (
+                                    <Link
+                                        to={`/employees/${teammate.id}`}
+                                        key={teammate.id}
+                                        className="flex items-center p-4 rounded-2xl border border-gray-50 bg-gray-50/30 hover:bg-white hover:shadow-md hover:border-[#00338D]/10 transition-all group min-w-0"
+                                    >
+                                        <Avatar name={teammate.fullName} size="sm" className="mr-4 ring-2 ring-white shadow-sm shrink-0" />
+                                        <div className="flex-1 min-w-0 overflow-hidden">
+                                            <p className="text-sm font-bold text-text-primary truncate group-hover:text-[#00338D] transition-colors">
+                                                {teammate.fullName}
+                                            </p>
+                                            <p className="text-[10px] text-text-secondary truncate mt-0.5">{teammate.designationName}</p>
+                                        </div>
+                                        <div className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                                            <ChevronRight className="w-4 h-4 text-[#00338D]" />
+                                        </div>
+                                    </Link>
+                                ))}
                         </div>
                     )}
                 </Card>

@@ -23,13 +23,13 @@ export default function AllocationRequestsPage() {
             </div>
 
             {/* Tabs */}
-            <div className="bg-white border-b border-gray-200">
+            <div className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm -mx-6 px-6">
                 <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                     <button
                         onClick={() => setActiveTab('pending')}
                         className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'pending'
-                                ? 'border-[#00338D] text-[#00338D]'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                            ? 'border-[#00338D] text-[#00338D]'
+                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                             }`}
                     >
                         Pending Approvals
@@ -37,8 +37,8 @@ export default function AllocationRequestsPage() {
                     <button
                         onClick={() => setActiveTab('my-requests')}
                         className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === 'my-requests'
-                                ? 'border-[#00338D] text-[#00338D]'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                            ? 'border-[#00338D] text-[#00338D]'
+                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                             }`}
                     >
                         My Requests
@@ -47,8 +47,8 @@ export default function AllocationRequestsPage() {
                         <button
                             onClick={() => setActiveTab('all')}
                             className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors flex items-center gap-2 ${activeTab === 'all'
-                                    ? 'border-[#00338D] text-[#00338D]'
-                                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                ? 'border-[#00338D] text-[#00338D]'
+                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                 }`}
                         >
                             <Briefcase className="w-4 h-4" />

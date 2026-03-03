@@ -204,7 +204,7 @@ export default function OrgChartPage() {
     };
 
     return (
-        <div className="flex flex-col h-[calc(100vh-80px)]">
+        <div className="flex flex-col h-full">
             {/* ── Header ─────────────────────────────────────────── */}
             <div className="shrink-0 bg-white border border-gray-100 rounded-xl shadow-sm p-4 mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 z-20 relative">
                 <div>

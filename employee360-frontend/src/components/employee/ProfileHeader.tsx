@@ -151,14 +151,14 @@ export function ProfileHeader({ employee }: ProfileHeaderProps) {
 
                     {/* Action Bar */}
                     <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-[#F1F3F5]">
-                        {(hasPermission('GIVE_PEER_FEEDBACK') || hasPermission('GIVE_DOWNWARD_FEEDBACK')) && (
+                        {!isOwnProfile && (hasPermission('GIVE_PEER_FEEDBACK') || hasPermission('GIVE_DOWNWARD_FEEDBACK')) && (
                             <Button variant="primary" size="sm" className="gap-2" onClick={() => setIsFeedbackModalOpen(true)}>
                                 <MessageSquare className="w-3.5 h-3.5" />
                                 Give Feedback
                             </Button>
                         )}
 
-                        {hasPermission('WRITE_PERFORMANCE_REVIEW') && isManagerOfThisEmployee && (
+                        {!isOwnProfile && hasPermission('WRITE_PERFORMANCE_REVIEW') && isManagerOfThisEmployee && (
                             <Button variant="secondary" size="sm" className="gap-2" onClick={() => setIsReviewModalOpen(true)}>
                                 <PenSquare className="w-3.5 h-3.5" />
                                 Write Review

@@ -103,7 +103,7 @@ export function Sidebar({ isMobileOpen, setIsMobileOpen }: SidebarProps) {
             {/* Sidebar Container */}
             <aside
                 className={cn(
-                    'fixed top-[104px] left-0 z-40 h-[calc(100vh-104px)] bg-sidebar-bg border-r border-[#E5E8EB] flex flex-col transition-all duration-300 ease-in-out w-[240px]',
+                    'fixed top-[64px] left-0 z-40 h-[calc(100vh-64px)] overflow-y-auto bg-sidebar-bg border-r border-[#E5E8EB] flex flex-col transition-all duration-300 ease-in-out w-[240px]',
                     isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
                 )}
             >

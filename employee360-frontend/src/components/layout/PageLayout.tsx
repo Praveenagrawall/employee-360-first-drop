@@ -61,24 +61,22 @@ export function PageLayout({ children }: PageLayoutProps) {
     }
 
     return (
-        <div className="min-h-screen bg-page-bg flex flex-col">
+        <div className="h-screen overflow-hidden bg-page-bg">
             <Topbar onMenuClick={() => setIsMobileSidebarOpen(true)} />
 
-            <div className="flex flex-1 relative">
-                <Sidebar
-                    isMobileOpen={isMobileSidebarOpen}
-                    setIsMobileOpen={setIsMobileSidebarOpen}
-                />
+            <Sidebar
+                isMobileOpen={isMobileSidebarOpen}
+                setIsMobileOpen={setIsMobileSidebarOpen}
+            />
 
-                <main className={cn(
-                    "flex-1 overflow-x-hidden w-full transition-all duration-300 ease-in-out lg:ml-[240px]",
-                    isMobileSidebarOpen ? "ml-0" : ""
-                )}>
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 h-full max-w-7xl">
-                        {children}
-                    </div>
-                </main>
-            </div>
+            <main className={cn(
+                "mt-[64px] h-[calc(100vh-64px)] overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out w-full lg:w-[calc(100%-240px)] lg:ml-[240px] p-6",
+                isMobileSidebarOpen ? "ml-0" : ""
+            )}>
+                <div className="container mx-auto max-w-7xl h-full">
+                    {children}
+                </div>
+            </main>
         </div>
     );
 }

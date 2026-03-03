@@ -86,7 +86,7 @@ export default function FeedbackPage() {
             </div>
 
             {/* Tabs */}
-            <div className="flex items-center gap-6 border-b border-[#F1F3F5] shrink-0">
+            <div className="sticky top-0 z-10 bg-white border-b border-[#F1F3F5] shadow-sm -mx-6 px-6 flex items-center gap-6 shrink-0">
                 <button
                     onClick={() => setActiveTab('RECEIVED')}
                     className={cn(

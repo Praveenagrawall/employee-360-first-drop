@@ -9,11 +9,11 @@ public class EmployeeSpecification {
     }
 
     public static Specification<Employee> hasDepartment(String dept) {
-        return (root, query, cb) -> dept == null ? null : cb.equal(root.get("department"), dept);
+        return (root, query, cb) -> (dept == null || dept.isBlank()) ? null : cb.equal(root.get("department"), dept);
     }
 
     public static Specification<Employee> hasLocation(String loc) {
-        return (root, query, cb) -> loc == null ? null : cb.equal(root.get("location"), loc);
+        return (root, query, cb) -> (loc == null || loc.isBlank()) ? null : cb.equal(root.get("location"), loc);
     }
 
     public static Specification<Employee> isActive(Boolean active) {

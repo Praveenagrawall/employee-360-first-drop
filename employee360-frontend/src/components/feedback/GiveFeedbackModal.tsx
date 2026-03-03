@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { AlertCircle } from 'lucide-react';
 import { Modal, RatingStars, Avatar } from '../common';
 import { useEmployees, useSubmitFeedback, useActiveProjects, useEmployee } from '../../hooks';
 import type { FeedbackType, FeedbackRequest, EmployeeSlim, ProjectSlim } from '../../types';
@@ -140,19 +141,26 @@ export default function GiveFeedbackModal({ isOpen, onClose, fromEmployeeId, tar
                         <label className="block text-[13px] font-medium text-gray-500 mb-1">
                             Recipient
                         </label>
-                        <div className="flex items-center gap-3 w-full border border-gray-200 rounded p-3 bg-gray-50">
-                            {targetEmployeeDetail ? (
-                                <>
-                                    <Avatar name={targetEmployeeDetail.fullName} size="sm" className="w-8 h-8 rounded-full" />
-                                    <div className="flex flex-col">
-                                        <span className="text-[14px] font-bold text-gray-900 leading-tight">{targetEmployeeDetail.fullName}</span>
-                                        <span className="text-[13px] text-gray-500 leading-tight">{targetEmployeeDetail.designationName}</span>
-                                    </div>
-                                </>
-                            ) : (
-                                <span className="text-sm text-text-secondary">Loading...</span>
-                            )}
-                        </div>
+                        {targetEmployeeId === fromEmployeeId ? (
+                            <div className="p-4 bg-error-50 border border-error-100 rounded text-error-700 text-sm font-bold flex items-center gap-2">
+                                <AlertCircle className="w-4 h-4" />
+                                You cannot give feedback to yourself.
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-3 w-full border border-gray-200 rounded p-3 bg-gray-50">
+                                {targetEmployeeDetail ? (
+                                    <>
+                                        <Avatar name={targetEmployeeDetail.fullName} size="sm" className="w-8 h-8 rounded-full" />
+                                        <div className="flex flex-col">
+                                            <span className="text-[14px] font-bold text-gray-900 leading-tight">{targetEmployeeDetail.fullName}</span>
+                                            <span className="text-[13px] text-gray-500 leading-tight">{targetEmployeeDetail.designationName}</span>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <span className="text-sm text-text-secondary">Loading...</span>
+                                )}
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <div>

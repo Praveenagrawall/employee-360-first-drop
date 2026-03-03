@@ -190,7 +190,7 @@ export default function PerformanceOverviewPage() {
 
                 {/* Team Sub-tabs (Current vs Past) */}
                 {activeTab === 'TEAM' && (
-                    <div className="flex items-center gap-6 border-b border-[#F1F3F5] pb-px">
+                    <div className="sticky top-0 z-10 bg-white border-b border-[#F1F3F5] shadow-sm -mx-6 px-6 flex items-center gap-6 pb-px">
                         <button
                             onClick={() => setTeamCycleMode('CURRENT')}
                             className={cn(

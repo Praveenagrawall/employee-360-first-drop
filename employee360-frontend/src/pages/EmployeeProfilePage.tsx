@@ -115,7 +115,7 @@ export default function EmployeeProfilePage() {
             <ProfileHeader employee={employee} />
 
             {/* Navigation Tabs */}
-            <div className="bg-card-bg rounded-card border border-[#E5E8EB] overflow-hidden sticky top-[52px] z-20">
+            <div className="bg-white sticky top-0 z-20 border-b border-[#E5E8EB] shadow-sm -mx-6 px-6">
                 <ProfileTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
             </div>
 

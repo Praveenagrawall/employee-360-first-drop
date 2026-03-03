@@ -167,7 +167,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
     };
 
     return (
-        <header className="h-[104px] bg-header-gradient flex flex-col z-50 sticky top-0 shadow-sm">
+        <header className="fixed top-0 left-0 right-0 h-[64px] w-full bg-header-gradient flex flex-col justify-center z-50 shadow-sm">
             {isViewingAsOthers && (
                 <div className="bg-red-600 text-white px-4 py-0.5 flex items-center justify-between text-[10px] font-bold tracking-tight shrink-0">
                     <div className="flex items-center space-x-2">
@@ -194,14 +194,14 @@ export function Topbar({ onMenuClick }: TopbarProps) {
                     </button>
 
                     <div className="flex items-center gap-2">
-                        <span className="text-white font-bold text-2xl tracking-tight">KPMG</span>
-                        <div className="h-4 w-[1px] bg-white/20 mx-1 hidden sm:block" />
-                        <span className="text-white/90 font-medium text-xs uppercase tracking-widest hidden sm:block">Employee 360</span>
+                        <span className="text-white font-bold text-3xl tracking-tight">KPMG</span>
+                        <div className="h-5 w-[1px] bg-white/20 mx-1 hidden sm:block" />
+                        <span className="text-white/90 font-medium text-sm uppercase tracking-widest hidden sm:block">Employee 360</span>
                     </div>
                 </div>
 
                 {/* Center: Compact Global Search */}
-                <div className="flex-1 max-w-[400px] mx-4 relative hidden md:block" ref={containerRef}>
+                <div className="flex-1 max-w-[480px] mx-12 relative hidden md:block" ref={containerRef}>
                     <div className="relative">
                         <div className="relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60 pointer-events-none" />
@@ -213,7 +213,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
                                 onFocus={() => { setIsFocused(true); setRecentSearches(getRecentSearches()); }}
                                 onKeyDown={handleKeyDown}
                                 placeholder="Search employees, projects…"
-                                className="w-full pl-10 pr-10 py-1.5 text-sm bg-white/15 border border-white/20 rounded text-white placeholder:text-white/70 focus:bg-white focus:text-text-primary focus:outline-none focus:ring-1 focus:ring-white/40 transition-all"
+                                className="w-full pl-10 pr-10 h-9 text-sm bg-white/15 border border-white/20 rounded text-white placeholder:text-white/70 focus:bg-white focus:text-text-primary focus:outline-none focus:ring-1 focus:ring-white/40 transition-all"
                             />
                             {query.length > 0 && (
                                 <button
@@ -340,7 +340,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
                         <button
                             title="Notifications"
                             onClick={() => setIsNotificationOpen(!isNotificationOpen)}
-                            className={`p-2 rounded transition-colors relative ${isNotificationOpen ? 'bg-white/20 text-white' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
+                            className={`p-2.5 rounded transition-colors relative ${isNotificationOpen ? 'bg-white/20 text-white' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
                         >
                             <Bell className="w-5 h-5" />
                             {pendingCount > 0 && (

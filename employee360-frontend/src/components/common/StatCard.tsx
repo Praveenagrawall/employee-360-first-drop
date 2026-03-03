@@ -46,7 +46,7 @@ export function StatCard({
             </div>
 
             <div className="flex items-baseline mb-1">
-                <span className="text-3xl font-bold text-text-primary">{value}</span>
+                <span className="text-2xl font-bold text-text-primary">{value}</span>
             </div>
 
             {trend && (

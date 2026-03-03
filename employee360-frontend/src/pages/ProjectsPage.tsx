@@ -67,7 +67,7 @@ export default function ProjectsPage() {
     }, [canViewStats, stats]);
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8 space-y-6">
+        <div className="w-full space-y-6">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
             )}
 
             {/* Filters */}
-            <Card className="p-4 border-[#E5E8EB] bg-card-bg rounded-card shadow-sm space-y-4">
+            <div className="sticky top-0 z-10 bg-white border-b border-[#E5E8EB] shadow-sm -mx-6 px-6 py-4 space-y-4">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <Tabs
                         tabs={tabs}
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
                         </button>
                     ))}
                 </div>
-            </Card>
+            </div>
 
             {/* Content */}
             {isLoading ? (
